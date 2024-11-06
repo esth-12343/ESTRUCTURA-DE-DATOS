@@ -39,11 +39,12 @@ Se realiza una comparación en relación al numero de llaves y al tiempo que con
 
 A medida que se incrementa el número de llaves por nodo en el B-tree (3, 5, 7, 9), el tiempo de búsqueda disminuye. Esto ocurre porque tener más llaves por nodo hace que el árbol sea más "plano", reduciendo la cantidad de niveles que se deben recorrer para encontrar un valor.
 
-**Reducción del Tiempo de Búsqueda:
+`*Reducción del Tiempo de Búsqueda:*`
 
 Pasar de 3 a 9 llaves reduce el tiempo de búsqueda de 2.649 a 1.963 segundos.
 La mejora es mayor al principio, pero disminuye conforme aumentan las llaves por nodo (beneficios decrecientes).
 
-**Balance entre Velocidad y Tamaño: Aunque más llaves por nodo mejoran la velocidad de búsqueda, también aumentan el tamaño de cada nodo, lo cual podría requerir más memoria o espacio en disco. Es importante balancear el número de llaves por nodo para optimizar rendimiento sin exceder los recursos disponibles.
+`*Balance entre Velocidad y Tamaño:*`
+Aunque más llaves por nodo mejoran la velocidad de búsqueda, también aumentan el tamaño de cada nodo, lo cual podría requerir más memoria o espacio en disco. Es importante balancear el número de llaves por nodo para optimizar rendimiento sin exceder los recursos disponibles.
 
 En resumen, más llaves por nodo en un B-tree tienden a mejorar el tiempo de búsqueda, pero hay un límite práctico donde los beneficios disminuyen.
