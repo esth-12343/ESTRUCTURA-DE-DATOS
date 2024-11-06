@@ -3,43 +3,27 @@
 #include <time.h>
 #include "b_tree.h"
 
-// Función para cargar los números desde el archivo CSV
-void loadNumbersFromFile(struct BTreeNode **root, const char *filename) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        printf("Error al abrir el archivo.\n");
-        exit(1);
-    }
-    
-    // Ignora la primera línea (encabezado)
-    char buffer[1024];
-    fgets(buffer, sizeof(buffer), file);
-
-    double key;
-    // Lee cada línea y extrae solo el valor de la columna number
-    while (fscanf(file, "%*d,%lf", &key) == 1) {
-        insert(root, key);
-    }
-
-    fclose(file);
-}
-
 int main() {
+    printf("Ingrese el número máximo de llaves: ");
+    scanf("%d", &MAX_KEYS);
+
+    if (MAX_KEYS < 2) {
+        printf("El número máximo de llaves debe ser al menos 2.\n");
+        return 1;
+    }
+
     struct BTreeNode *root = NULL;
 
-    // Medir el tiempo de carga de datos
     clock_t start_load = clock();
     loadNumbersFromFile(&root, "random_numbers_1000000.csv");
     clock_t end_load = clock();
     double load_time = (double)(end_load - start_load) / CLOCKS_PER_SEC;
     printf("Tiempo de carga de datos: %.5lf segundos\n", load_time);
 
-    // Prueba de búsqueda
     double search_key;
     printf("Ingrese el número que desea buscar: ");
     scanf("%lf", &search_key);
 
-    // Medir el tiempo de búsqueda
     clock_t start_search = clock();
     struct SearchResult result = search(root, search_key);
     clock_t end_search = clock();
