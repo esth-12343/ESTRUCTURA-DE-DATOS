@@ -32,3 +32,7 @@ Archivo principal que ejecuta el programa y gestiona la carga de datos y la bús
   - Permite al usuario ingresar un número para buscar y mide el tiempo de búsqueda.
   - Muestra si el número se encuentra en el Árbol B y su posición dentro del nodo.
 
+# TABLA COMPARATIVA 
+Se realiza una comparación en relación al numero de llaves y al tiempo que conlleva en encontrar un valor en el árbol B.
+![Tabla comparativa](https://github.com/esth-12343/ESTRUCTURA-DE-DATOS/blob/main/images/TABLA-COMPARATIVA.png)
+ A medida que se incrementa el número de llaves por nodo en el B-tree (3, 5, 7, 9), el tiempo de búsqueda disminuye.
